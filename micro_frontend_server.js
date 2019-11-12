@@ -16,7 +16,7 @@ mf.use(cors());
 //var Micro_Schema = require("./Micro_Schema.js")
 var {Micro_Frontend} = require ("./micro_frontend_schema.js")
 var {Individual_Request_Schema_MF} = require ("./micro_frontend_schema.js")
-var {Micro_Schema} = require ("./Micro_schema.js")
+var {Micro_Schema} = require ("./Micro_Schema.js")
 //var Micro_Frontend=Micro_Schema.Micro_Frontend_Schema
 
 mongoose.connect(
