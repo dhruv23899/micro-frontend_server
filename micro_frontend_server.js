@@ -248,6 +248,6 @@ mf.use("/retrieve_individual_requests", (req, res) => {
 
 
 //module.exports = mf
-mf.listen(5002, () => {
+mf.listen(process.env.PORT || 5002, () => {
   console.log("listening at port: 5002");
 });
