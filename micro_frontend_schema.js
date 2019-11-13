@@ -8,7 +8,7 @@ var Micro_Frontend_Schema = new Schema({
   desc: { type: String, required: true },
   rating: { type: Number },
   srch_util: {type: String, text: true, /*default: ""title + keywords + desc*/},
-  //developers: [User_Schema],  We will think about this later
+  developer: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: false },  //We will think about this later
   documentation: { type: String },
   code_snippet: { type: String },
   tech_stack: [{ type: String }],
