@@ -64,16 +64,17 @@ mf.post("/add_micro_frontend", (req,res) => {
     let tech_stack_string = req.body.tech_stack;
     let tech_stack=tech_stack_string.split(",")
     let mf_image = req.body.mf_image;
+    let developer = req.body.developer
     // let rating = req.body.rating;
     Micro_Frontend.create({title: title,desc: desc,keywords: keywords,documentation: documentation,
-        code_snippet: code_snippet,tech_stack: tech_stack,mf_image: mf_image,srch_util:srch_util},function(err,micro){
+        code_snippet: code_snippet,tech_stack: tech_stack,mf_image: mf_image,srch_util:srch_util,developer:developer},function(err,micro){
       if(err){
         console.log(err);
         res.send({status:false,error:err})
       }else {
         console.log(micro);
         console.log("Microfrontend saved successfully")
-        res.send({status:true});
+        res.send({status:true,micro:micro});
       }
     })
 });
@@ -215,8 +216,8 @@ mf.post("/add_individual_request", (req, res) => {
   let desc = req.body.desc;
   let owner = req.body.owner;
   let micro_id=req.body.mf_id
-  
-  
+
+
   Individual_Request_Schema_MF.create({title:title , desc:desc,owner:owner,micro_id:micro_id},function(err, micro) {
       if (err) {
         console.log(err);
@@ -248,6 +249,6 @@ mf.use("/retrieve_individual_requests", (req, res) => {
 
 
 //module.exports = mf
-mf.listen(process.env.PORT || 5002, () => {
+mf.listen(5002, () => {
   console.log("listening at port: 5002");
 });
