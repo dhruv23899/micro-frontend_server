@@ -11,7 +11,7 @@ var Micro_Schema = new Schema({
   desc: { type: String, required: true },
   srch_util: {type:String , text:true},
   rating: { type: Number },
-  //developers: [User_Schema],  We will think about this later
+  developer: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: false },  //We will think about this later
   documentation: { type: String },
   code_snippet: { type: String },
   tech_stack: [{ type: String }],
